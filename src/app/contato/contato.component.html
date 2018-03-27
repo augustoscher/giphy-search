@@ -1,0 +1,37 @@
+<!--
+  #: Dá um nome ao atributo de maneira que este nome pode ser usado pelo angular.
+  #f="ngFomr": Estamos declarando um elemento 'f' que é do tipo ngForm. Ele pode ser passado por parâmetro, como fazemos no submit.
+  ngModel: É o modelo do input. Angular cria um objeto {nome: 'valor preenchido no input'}
+-->
+<form #f="ngForm" (ngSubmit)="enviarContato(f)">
+  <label>
+    <span>Nome completo</span>
+  </label>
+  <input id="nome" type="text" name="nomeCompleto" placeholder="Nome completo" #nomeCompleto="ngModel" minlength="2" required ngModel>
+  <div *ngIf="nomeCompleto.errors?.required && nomeCompleto.touched" class="error">
+    O nome é obrigatório. Mínimo 2 caracteres.
+  </div>
+
+  <!--
+  ngModelGroup="contato" estamos criando um objeto como sendo um atributo do objeto criado anteriormente. Este 
+  objeto é do tipo ngModelGroup com o nome de contatoUsuario. Dentro desse objeto, vai ter um atributo 'email' 
+  com o seu valor
+-->
+  <label ngModelGroup="contato" #contatoUsuario="ngModelGroup">
+    <span>Email</span>
+    <input type="text" placeholder="E-mail" name="email" ngModel required>
+  </label>  
+  <div style="margin-top: 5px;">
+    <button type="submit" id="btn" name="btn" [disabled]="f.invalid">Enviar</button>
+  </div>
+  
+</form>
+
+
+
+<p>
+  {{nomeCompleto?.errors | json }}
+</p>
+<p>
+  {{f.controls.nomeCompleto?.errors | json}}
+</p>

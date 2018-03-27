@@ -1,0 +1,15 @@
+<a [routerLink]="''">Welcome</a>
+<a [routerLink]="'giphy'">Giphy</a>
+<a [routerLink]="'giphy-search-auto'">Giphy-Auto</a>
+<a [routerLink]="'diretiva-common-module'">Diretiva Commom</a>
+<a [routerLink]="'contato'">Contato</a>
+
+<hr/>
+
+<!-- tag router-outlet fica disponivel quando o AppRoutingModule exporta : exports: [RouterModule] -->
+<router-outlet (activate)='onActivate($event)' (deactivate)='onDeactivate($event)'></router-outlet>
+
+
+
+<hr/>
+Footer
