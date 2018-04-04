@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgclassExemploComponent implements OnInit {
 
+  flat: boolean = true;
+  dark: boolean = true;
+
   constructor() { }
 
   ngOnInit() {
