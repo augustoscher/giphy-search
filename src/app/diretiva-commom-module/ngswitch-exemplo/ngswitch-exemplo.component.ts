@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgswitchExemploComponent implements OnInit {
 
+  formatacao: string;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setFormatacao(param: any) {
+    this.formatacao = param;
   }
 
 }
