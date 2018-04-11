@@ -1,3 +1,14 @@
-<p>
-  inicio works!
-</p>
+<p>{{'Aqui tem pipe' | uppercase}}</p>
+<p>{{dataCriacao | date:"dd/MM/yy"}}</p>
+<p>{{dataCriacao | date | uppercase}}</p>
+<p>{{dataCriacao | date:"fullDate" | lowercase}}</p>
+<p>{{mensagem | uppercase}}: <a href="youtube">youtube</a></p>
+<p>{{mensagem | uppercase}}: <a href="{{youtube}}">youtube2</a></p>
+
+<h2>DecimalPipe</h2>
+<p>preço: {{ 10.147 | number }}</p>
+<p>preço: {{ 10.147 | number:"3.2-2" }}</p>
+
+<h2>TipoPessoa</h2>
+<p>Tipo J: {{ 'J' | tipopessoa }}</p>
+<p>Tipo F: {{ 'F' | tipopessoa }}</p>

@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
+  dataCriacao: Date = new Date(1988, 3, 15);
+  mensagem: string = 'Olá que tal me gusta mama mia';
+  youtube: string = 'http://youtube.com.br';
+
   constructor() { }
 
   ngOnInit() {
